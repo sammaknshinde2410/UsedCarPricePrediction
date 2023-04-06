@@ -1,0 +1,8 @@
+Flask
+matplotlib
+seaborn
+sklearn
+pandas
+numpy
+datetime
+joblib
