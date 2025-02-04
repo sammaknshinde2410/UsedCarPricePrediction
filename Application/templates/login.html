@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Used Car Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+		@media screen and (max-width:1300px){
+			.text-container{
+				width:40%;
+				top: 45%;
+			}
+			.login-container{
+				top:25%;
+				left:60%;
+			}
+		}
+		@media screen and (max-width:1000px){
+			.text-container{
+				width:90%;
+				top: 15%;
+				left:5%;
+			}
+			.login-container{
+				width:60%;
+				top:45%;
+				left:20%;
+			}
+		}
+		@media screen and (max-width:650px){
+			.text-container{
+				width:90%;
+				top: 10%;
+				left:5%;
+			}
+			.login-container{
+				width:60%;
+				top:45%;
+				left:22.5%;
+			}
+		}
+			@media screen and (max-width:600px){
+			.text-container{
+				width:90%;
+				top: 12%;
+				left:5%;
+			}
+			.login-container{
+				width:60%;
+				top:55%;
+				left:20%;
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<h1>Used Car Price Prediction</h1>
+		<ul>
+			<li><a href="{{ url_for('register') }}">Sign-Up</a></li>
+			<li><a href="{{ url_for('about') }}">About</a></li>
+			<li><a href="{{ url_for('contact') }}">Reach us</a></li>
+		</ul>
+		<div class="dropdown">
+			<button class="dropbtn">Menu</button>
+			<div class="dropdown-content">
+				<a href="{{ url_for('register') }}">Sign-Up</a>
+			  	<a href="{{ url_for('about') }}">About</a>
+			  	<a href="{{ url_for('contact') }}">Reach us</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Description of Service -->
+	<div class="text-container">
+		<h2>Welcome to used car price prediction service!</h2>
+        <hr><br>
+		<p> Our goal is to provide you with an accurate estimate of the selling price of your car, based on a range of factors that influence the value of a vehicle. Whether you're looking to sell your car or buy a new one, our service can help you make informed decisions about pricing.
+        <br><b>To Determine the value of your Car, Please Login.</b></p></div>
+
+        
+    <div class="login-container">
+        <h2>Sign-In Form</h2>
+		<hr>
+        <form method="POST" action="{{ url_for('login') }}">
+			{% if prompt is defined and prompt %}
+			<div class="warning">{{ prompt }}</div>
+			{% endif %}
+            <div class="form-item">
+                <input type="email" class="form-input" id="email" name="email" placeholder="  Email">
+            </div>
+            <div class="form-item">
+                <input type="password" class="form-input" id="password" name="password" placeholder="  Password">
+            </div>
+            <button type="submit" class="btn-login">Sign In</button>
+            <p class="bottom">Don't have an account?  <a href="{{ url_for('register') }}">Sign-Up here!</a></p>
+        </form>
+    </div>
+	
+	
+	<footer>
+		<p>&copy; 2023 Used Car Price Prediction System. All rights reserved.</p>
+	</footer>
+        
+
+	
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us - Used Car Price Prediction System</title>
+    <style>
+body{
+  font-family:Helvetica;
+  color: aliceblue;
+  background-color: #333;
+}
+main {
+  margin: 2em;
+  text-align: center;
+}
+
+p{
+  margin:3% 0px;
+}
+
+form label {
+  display: block;
+  width:70%;
+  margin-bottom: 0.5em;
+  text-align: left;
+  position:relative;
+  left:16%;
+}
+
+form input,
+form textarea {
+  display: block;
+  margin-bottom: 1em;
+  width: 70%;
+  padding: 0.5em;
+  position: relative;
+  left:15%;
+}
+
+form button {
+  text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	border-radius: 200px;
+	font-weight: bold;
+	background:black;
+	color:  white;
+	cursor: pointer;
+	border: 2px solid whitesmoke;
+}
+form button:hover{
+  background: black;
+	color: white;
+	border: 2px solid white;
+	box-shadow: 0 0 15px white;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Navbar */
+.navbar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:rgba(0,0,0,0.6);
+	position: relative;
+	top: 0;
+
+}
+.navbar h1{
+	position: absolute;
+	right:75%;
+	text-decoration: underline;
+    color:aliceblue;
+}
+.navbar ul{
+	display: flex;
+	list-style: none;
+	margin: 20px 0px;
+	z-index: 1;
+	position:relative;
+	left:30%
+}
+.navbar ul li{
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+.navbar ul li a{
+	text-decoration: none;
+	color: white;
+	padding: 8px 25px;
+	transition: all .5s ease;
+}
+.navbar ul li a:hover{
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 10px white;
+	border-radius: 5px;
+}
+.dropdown{
+	display:none;
+}
+/*Responsive adjustments*/
+@media screen and (max-width:1300px){
+	.navbar h1{
+		right: 60%;
+	}
+	.navbar ul{
+		left: 23%;
+	}
+}
+@media screen and (max-width:800px){
+	.navbar h1{
+		right: 50%;
+	}
+	.navbar ul{
+		display: none;
+	}
+	.dropdown{
+		display: block;
+		position: relative;
+		left:35%;
+		margin: 10px;
+	}
+	.dropbtn {
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 13px 20px;
+		border-radius: 25%;
+		font-weight: bold;
+		background:black;
+		color:  white;
+		cursor: pointer;
+		border: 2px solid whitesmoke;
+	}
+	.dropbtn:hover{
+		box-shadow: 0 0 10px white;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right:0%;
+		background-color: black;
+		min-width: 100px;
+		z-index: 1;
+		border-radius: 10%;
+	  }
+	  .dropdown-content a {
+		color: whitesmoke;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  .dropdown-content a:hover{
+		background: whitesmoke;
+		color: black;
+		box-shadow: 0 0 15px white;
+		border-radius: 10%;
+	  }
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+    }
+    @media screen and (max-width:700px){
+	.navbar h1{
+		left: 4%;
+	}
+	.navbar ul{
+		display: none;
+	}
+	.dropdown{
+		display: block;
+		position: relative;
+		left:35%;
+		margin: 10px;
+	}
+	.dropbtn {
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 13px 20px;
+		border-radius: 25%;
+		font-weight: bold;
+		background:black;
+		color:  white;
+		cursor: pointer;
+		border: 2px solid whitesmoke;
+	}
+	.dropbtn:hover{
+		box-shadow: 0 0 10px white;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right:0%;
+		background-color: black;
+		min-width: 100px;
+		z-index: 1;
+		border-radius: 10%;
+	  }
+	  .dropdown-content a {
+		color: whitesmoke;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  .dropdown-content a:hover{
+		background: whitesmoke;
+		color: black;
+		box-shadow: 0 0 15px white;
+		border-radius: 10%;
+	  }
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+
+}
+
+@media screen and (max-width:650px){
+	.navbar h1{
+		right: 20%;
+	}
+	.navbar ul li a{
+		left: 5%;
+		padding: 0px 10px;
+	}
+
+}
+
+@media screen and (max-width:550px){
+	.navbar h1{
+		left: 5%;
+	}
+	.navbar ul{
+		left: 0%;
+	}
+	.dropdown{
+		left: 37%;
+	}
+
+}
+hr{
+  width:80%;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Used Car Price Prediction</h1>
+      <ul>
+        <li><a href ="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+      </ul>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <h1>Reach Us</h1><hr>
+      <p>If you have any questions or comments about our used car price prediction system, please fill out the form below and we'll get back to you as soon as possible.</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Used Car Price Prediction System. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

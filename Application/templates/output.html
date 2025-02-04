@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Used Car Price Prediction</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style3.css') }}">
+</head>
+<body>
+	<nav class="navbar">
+		<h1>Used Car Price Prediction</h1>
+		<ul>
+			<li><a href ="{{ url_for('history') }}">History</a></li>
+			<li><a href="{{ url_for('about') }}">About</a></li>
+			<li><a href="{{ url_for('contact') }}">Reach us</a></li>
+			<li><a href ="{{ url_for('logout') }}">Sign Out</a></li>
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+		</ul>
+		<div class="dropdown">
+			<button class="dropbtn">Menu</button>
+			<div class="dropdown-content">
+				<a href="{{ url_for('history') }}">History</a>
+			  	<a href="{{ url_for('about') }}">About</a>
+			  	<a href="{{ url_for('contact') }}">Reach us</a>
+				<a href="{{ url_for('logout') }}">Sign Out</a>
+				<a href="{{ url_for('home') }}">Home</a>
+			</div>
+		</div>
+	</nav>
+	<h1 class="output-h1">Car Price Prediction Result</h1>
+	<h3>{{ username }}, Your Inputs were as follows : </h3>
+	<div class="output-grid">
+		<div class="grid-value">
+			<label>Manufacturer</label>
+			<p>{{manufacturer}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Kilometers Driven : </label>
+			<p>{{k_driven}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Mileage : </label>
+			<p>{{mileage}}</p>
+		</div>  
+		<div class="grid-value">
+			<label>Engine : </label>
+			<p>{{engine}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Power : </label>
+			<p>{{power}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Seats : </label>
+			<p>{{seats}}</p>
+		</div>  
+		<div class="grid-value">
+			<label>Age : </label>
+			<p>{{age}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Fuel Type : </label>
+			<p>{{fuel_type}}</p>
+		</div>
+		<div class="grid-value">
+			<label>Transmission : </label>
+			<p>{{transmission}}</p>
+		</div>
+		<br> 
+		<div class="grid-value">
+			<label>Owner Type : </label>
+			<p>{{owner_type}}</p>
+		</div>  
+	  </div>
+	<p class="result">The predicted price of your car is <span class="price">{{ prediction }}</span> lakhs.</p>
+	<footer>
+		<p>&copy; 2023 Used Car Price Prediction System. All rights reserved.</p>
+	</footer>
+</body>
+</html>

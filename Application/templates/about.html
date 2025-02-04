@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<style>
+		body {
+			font-family: Helvetica;
+			background-color: rgba(0, 0, 0, 0.85);
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: black;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+			text-align: center;
+            color: white;
+		}
+		/*h1 {
+			margin-top: 0;
+		}*/
+		.team {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			margin-top: 30px;
+		}
+		.member {
+			width: 30%;
+			margin-bottom: 30px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+			overflow: hidden;
+		}
+		.member img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+		}
+		.member h2 {
+			margin: 10px;
+		}
+		.member p {
+			margin: 10px;
+			font-size: 14px;
+			color: #7b7b7b;
+		}
+        .ucpp-text{
+            width: 80%;
+            position:relative;
+            left:10%;
+            padding: 5% 0%;
+        }
+        hr{
+            width:90%;
+        }
+		footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+        /* Navbar */
+.navbar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:rgba(0,0,0,0.6);
+	position: relative;
+	top: 0;
+
+}
+.navbar h1{
+	position: absolute;
+	right:75%;
+	text-decoration: underline;
+    color:aliceblue;
+}
+.navbar ul{
+	display: flex;
+	list-style: none;
+	margin: 20px 0px;
+	z-index: 1;
+	position:relative;
+	left:30%
+}
+.navbar ul li{
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+.navbar ul li a{
+	text-decoration: none;
+	color: white;
+	padding: 8px 25px;
+	transition: all .5s ease;
+}
+.navbar ul li a:hover{
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 10px white;
+	border-radius: 5px;
+}
+.dropdown{
+	display:none;
+}
+/*Responsive adjustments*/
+@media screen and (max-width:1300px){
+	.navbar h1{
+		right: 60%;
+	}
+	.navbar ul{
+		left: 23%;
+	}
+}
+@media screen and (max-width:800px){
+	.navbar h1{
+		right: 50%;
+	}
+	.navbar ul{
+		display: none;
+	}
+	.dropdown{
+		display: block;
+		position: relative;
+		left:35%;
+		margin: 10px;
+	}
+	.dropbtn {
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 13px 20px;
+		border-radius: 25%;
+		font-weight: bold;
+		background:black;
+		color:  white;
+		cursor: pointer;
+		border: 2px solid whitesmoke;
+	}
+	.dropbtn:hover{
+		box-shadow: 0 0 10px white;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right:0%;
+		background-color: black;
+		min-width: 100px;
+		z-index: 1;
+		border-radius: 10%;
+	  }
+	  .dropdown-content a {
+		color: whitesmoke;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  .dropdown-content a:hover{
+		background: whitesmoke;
+		color: black;
+		box-shadow: 0 0 15px white;
+		border-radius: 10%;
+	  }
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+    }
+    @media screen and (max-width:700px){
+	.navbar h1{
+		left: 4%;
+	}
+	.navbar ul{
+		display: none;
+	}
+	.dropdown{
+		display: block;
+		position: relative;
+		left:35%;
+		margin: 10px;
+	}
+	.dropbtn {
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 13px 20px;
+		border-radius: 25%;
+		font-weight: bold;
+		background:black;
+		color:  white;
+		cursor: pointer;
+		border: 2px solid whitesmoke;
+	}
+	.dropbtn:hover{
+		box-shadow: 0 0 10px white;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right:0%;
+		background-color: black;
+		min-width: 100px;
+		z-index: 1;
+		border-radius: 10%;
+	  }
+	  .dropdown-content a {
+		color: whitesmoke;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  .dropdown-content a:hover{
+		background: whitesmoke;
+		color: black;
+		box-shadow: 0 0 15px white;
+		border-radius: 10%;
+	  }
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+
+}
+
+@media screen and (max-width:650px){
+	.navbar h1{
+		right: 20%;
+	}
+	.navbar ul li a{
+		left: 5%;
+		padding: 0px 10px;
+	}
+
+}
+
+@media screen and (max-width:550px){
+	.navbar h1{
+		left: 5%;
+	}
+	.navbar ul{
+		left: 0%;
+	}
+	.dropdown{
+		left: 37%;
+	}
+
+}
+
+	</style>
+</head>
+<body>
+    <nav class="navbar">
+		<h1>Used Car Price Prediction</h1>
+		<ul>
+			<li><a href ="{{ url_for('home') }}">Home</a></li>
+			<li><a href="{{ url_for('contact') }}">Reach us</a></li>
+			
+		</ul>
+		<div class="dropdown">
+			<button class="dropbtn">Menu</button>
+			<div class="dropdown-content">
+				<a href="{{ url_for('home') }}">Home</a>
+			  	<a href="{{ url_for('contact') }}">Reach us</a>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div class="container">
+        <h1>About Used Car Price Prediction</h1>
+        <p class="ucpp-text">Welcome to our used car price prediction model! Our team of experts in the used car industry has developed a powerful system that utilizes advanced data science techniques to provide accurate price predictions for pre-owned vehicles.
+           <br><br> mission is to make the used car buying and selling process easier and more transparent for everyone. By leveraging our model, you can obtain a fair market value for your used car or find the best deals on pre-owned vehicles without having to haggle or negotiate with car dealerships.
+           <br><br>Our system is built on a vast database of historical pricing information, which we use to train our machine learning algorithms. We continuously update our model with new data to ensure that our predictions are always up-to-date and reliable. Our team of data scientists and developers work tirelessly to improve the accuracy and speed of our model, so that you can make informed decisions when buying or selling a used car.
+           <br><br>We understand that the used car market can be overwhelming and confusing, with many variables to consider such as the car's make, model, year, mileage, and condition. Our goal is to simplify the process by providing you with a user-friendly interface and easy-to-understand reports.
+           <br><br>Thank you for choosing our used car price prediction model. We are committed to providing you with the best possible service and helping you make smart decisions in the used car market. If you have any questions or feedback, please don't hesitate to contact us.
+        </p>
+        <br><br>
+        <hr>
+        <br><br>
+		<h1>About Us</h1>
+		<p>We are a team of experts in the used car industry, dedicated to providing accurate price predictions for pre-owned vehicles.</p>
+		<div class="team">
+			<div class="member">
+				<h2>Prathamesh Doke</h2>
+				<p>Full Stack Web Developer</p>
+			</div>
+			<div class="member">
+				<h2>Vishakha Mahajan</h2>
+				<p>UI/UX Designer</p>
+			</div>
+			<div class="member">
+				<h2>Sammak Shinde</h2>
+				<p>Full Stack Web Developer</p>
+			</div>
+			<div class="member">
+				<h2>Vibhakar Singh</h2>
+				<p>UI/UX Designer</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>&copy; 2023 Used Car Price Prediction System. All rights reserved.</p>
+	</footer>
+</body>
+</html>
